@@ -1,8 +1,0 @@
-Within the nxos-final...box file, there is a nxosv_config.iso that contains an NXOS_CONFIG.txt file
-	This file should be modified if we want to change the default script that runs on startup.
-
-Vagrantfile config examples from cisco:
-https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/nx-osv/configuration/guide/b_NX-OSv_9000/b_NX-OSv_chapter_01.html#id_45171
-
-It appears that the VM will not boot is there is less than 8GB of RAM
-https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/nx-osv/configuration/guide/b_NX-OSv_9000/b_NX-OSv_9000_chapter_010.html#reference_30FC3574C6FE4568AF1A208FF8FC5EA4
