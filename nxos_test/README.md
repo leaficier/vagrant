@@ -48,7 +48,7 @@ vagrant init --minimal
 
 Step2: Add the NX-OSv box file to Vagrant 
 ```
-vagrant box add simple-name /path/to/box/file
+vagrant box add arbitrary-name /path/to/file.box
 vagrant box list  
 ```
 
