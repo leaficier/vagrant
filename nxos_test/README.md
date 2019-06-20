@@ -38,25 +38,35 @@ NX-OSv Vagrant Box file (using nxosv-final.7.0.3.I5.1.box)
 ```
 
 ### Installing
+Read through all steps before starting as there are optional steps at the bottom (todo).
+
 Step1: Setup directory and Vagrant file
 ```
 mkdir ...
 vagrant init --minimal
 ```
+
 Step2: Add the NX-OSv box file to Vagrant 
 ```
 vagrant box add simple-name /path/to/box/file
 vagrant box list  
 ```
+
 Step3: Clone this repository and cd to it
 
 Step4: Run the Vagrantfile (this will take awhile depending on your system)
+  OPTIONAL PRE-Step4: Customize the nxosv_config.iso file to change initial configurations
+
 ```
 vagrant up
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Step5: SSH into NX-OS and configure the boot file
+```
+vagrant ssh
 
+
+```
 
 
 ## Deployment
