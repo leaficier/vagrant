@@ -27,10 +27,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
 ```
-Give examples
+Vagrant 
+Putty (or socat on macOS)
+NX-OSv Vagrant Box file (using nxosv-final.7.0.3.I5.1.box)
 ```
 
 ### Installing
