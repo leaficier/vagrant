@@ -1,0 +1,13 @@
+Vagrant.configure("2") do |config|
+  # what machine we gonna run
+  config.vm.box = "ubuntu/trusty64"
+
+  # provisioning (ie: what commands we gonna run)
+  config.vm.provision :shell, path: "bootstrap.sh"
+
+  # going to make port 80 on guest accessible to host(me) via port 4567
+  config.vm.network :forwarded_port, guest: 80, host: 4567
+
+  # use a bridged adapter to give machine its own address
+  # config.vm.network "public_network"
+end
