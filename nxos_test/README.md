@@ -43,10 +43,9 @@ NX-OSv Vagrant Box file (using nxosv-final.7.0.3.I5.1.box)
 ###### Step1: Add the NX-OSv box file to Vagrant 
 ```
 vagrant box add arbitrary-name C:\path\to\file.box
-vagrant box list  
 ```
 
-###### Step2: Clone this repository and cd to it
+###### Step2: Clone this repository and move to it
 
 ###### Step3: Extract the nxosv_config.iso file from the nxosv-final.7.0.3.I5.1.box file to the same repo directory
 ```
@@ -54,7 +53,7 @@ tar -xf C:\...\nxosv-final.7.0.3.I5.1.box nxosv_config.iso
 ```
 
 ###### Step4: Run the Vagrantfile 
-  OPTIONAL PRE-Step5: Customize the text file within **nxosv_config.iso** file to change the initial configuration
+  OPTIONAL PRE-Step5: Customize the text file within **nxosv_config.iso** to change initial configuration
 
 ```
 vagrant up
@@ -66,8 +65,15 @@ In putty:
 Set connection type to Serial and leave speed at 9600
 Serial line will be:  \\.\pipe\COM1 
 ```
-Login with the default admin credentials
+Login to the serial port the default admin credentials
+```
+User Access Verification
+nxosv login: admin
+Password:
+nxosv#
+```
 
+List available files and locate the .bin
 ```
 nxosv# dir
 
@@ -76,17 +82,22 @@ nxosv# dir
   757450240    Nov 18 23:21:29 2016  nxos.7.0.3.I5.1.bin    <------ this one
        4096    Jun 20 19:02:39 2019  scripts/
        ...    
-       
+```
+Set the .bin to be the boot file
+```
 nxosv# config t
 nxosv(config)# boot nxos bootflash:nxos.7.0.3.I5.1.bin
 nxosv(config)# show boot
   Current Boot Variables:
   sup-1
-  NXOS variable = bootflash:/nxos.7.0.3.I5.1.bin 
+  NXOS variable = bootflash:/nxos.7.0.3.I5.1.bin     <------ good to go
   No module boot variable set
-  
+```
+Save the config
+```
  nxosv(config)# copy run start
 ```
+
 ##### SSH
 We are now good to SSH to the VM 
 ```
@@ -96,6 +107,10 @@ vagrant ssh
   Password:
   Cisco NX-OS Software
 nxosv#
+```
+Shut down the VM 
+```
+vagrant halt -f
 ```
 
 
