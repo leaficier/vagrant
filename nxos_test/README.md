@@ -41,39 +41,37 @@ NX-OSv Vagrant Box file (using nxosv-final.7.0.3.I5.1.box)
 ### Installing
 Read through all steps before starting as there are optional steps at the bottom (todo).
 
-Step1: Setup directory and Vagrant file
-```
-mkdir ...
-vagrant init --minimal
-```
 
-Step2: Add the NX-OSv box file to Vagrant 
+###### Step1: Add the NX-OSv box file to Vagrant 
 ```
 vagrant box add arbitrary-name C:\path\to\file.box
 vagrant box list  
 ```
 
-Step3: Clone this repository and cd to it
+###### Step2: Clone this repository and cd to it
 
-Step4: Extract the nxosv_config.iso file from the nxosv-final.7.0.3.I5.1.box file
+###### Step3: Extract the nxosv_config.iso file from the nxosv-final.7.0.3.I5.1.box file
 ```
 Using tar (while inside same directory as the Vagrantfile):
   tar -xf C:\...\nxosv-final.7.0.3.I5.1.box nxosv_config.iso
 ```
 
-Step5: Run the Vagrantfile (this will take awhile depending on your system)
-  OPTIONAL PRE-Step5: Customize the text file within nxosv_config.iso file to change the initial configuration
+###### Step4: Run the Vagrantfile (this will take awhile depending on your system)
+  OPTIONAL PRE-Step5: Customize the text file within **nxosv_config.iso** file to change the initial configuration
 
 ```
 vagrant up
 ```
 
-Step6: SSH into NX-OS and configure the boot file
+###### Step5: Connect to the named pipe virtual serial port and configure boot file
+In putty: 
 ```
-vagrant ssh
+Set connection type to Serial and leave speed at 9600
+Serial line will be:  \\.\pipe\COM1 
+```
+Login with the default admin credentials
 
 
-```
 
 
 ## Deployment
