@@ -23,7 +23,11 @@ More to come...
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+The NX-OSv VM is picky about system requirements and WILL NOT boot if you don't meet the memory requirment (8GB minimum). 
+
+This will be a problem for people with exactly 8GB on their personal devices as it will run but you will struggle to do anything else at the same time. 
+
+Eventually I want to try this out on ESXi or someother environment where I can get a lot more resources to use.
 
 ### Prerequisites
 
