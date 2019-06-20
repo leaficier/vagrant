@@ -1,6 +1,23 @@
-# Project Title
+# NX-OSv on Windows Vagrant 
+"""
+As a network development engineer, I would like to have a Vagrantfile that I can use on my laptop or in a Continuous Integration setting, so that I can do integration testing for Ansible playbooks in the NX-OS product family.
 
-One Paragraph of project description goes here
+Acceptance criteria:
+
+A partner VM running Linux with Ansible (and eventually Jenkins) should be contained in the topology and should be able to reach the management port of the NX-OSv instance.
+Ideally the NX-OSv image would come from a public repository but if that isn't possible due to access permissions, then posting it to  private Artifactory instance would be the next option.
+
+Create golden image that has the following installed and configured on widely used vagrant base box:
+Ansible
+Docker
+Molecule
+All Dependencies required for Ansible Module Development/Testing
+https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_general.html
+virtualenv & virtualenvwrapper installed and configured to use python3 by default.
+pytest
+(Optional) Use packer to create golden image
+More to come...
+"""
 
 ## Getting Started
 
