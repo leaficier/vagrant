@@ -1,5 +1,6 @@
 # NX-OSv on Windows Vagrant 
 """
+
 As a network development engineer, I would like to have a Vagrantfile that I can use on my laptop or in a Continuous Integration setting, so that I can do integration testing for Ansible playbooks in the NX-OS product family.
 
 Acceptance criteria:
