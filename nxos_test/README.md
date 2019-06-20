@@ -48,20 +48,26 @@ vagrant init --minimal
 
 Step2: Add the NX-OSv box file to Vagrant 
 ```
-vagrant box add arbitrary-name /path/to/file.box
+vagrant box add arbitrary-name C:\path\to\file.box
 vagrant box list  
 ```
 
 Step3: Clone this repository and cd to it
 
-Step4: Run the Vagrantfile (this will take awhile depending on your system)
-  OPTIONAL PRE-Step4: Customize the nxosv_config.iso file to change initial configurations
+Step4: Extract the nxosv_config.iso file from the nxosv-final.7.0.3.I5.1.box file
+```
+Using tar (while inside same directory as the Vagrantfile):
+  tar -xf C:\...\nxosv-final.7.0.3.I5.1.box nxosv_config.iso
+```
+
+Step5: Run the Vagrantfile (this will take awhile depending on your system)
+  OPTIONAL PRE-Step5: Customize the text file within nxosv_config.iso file to change the initial configuration
 
 ```
 vagrant up
 ```
 
-Step5: SSH into NX-OS and configure the boot file
+Step6: SSH into NX-OS and configure the boot file
 ```
 vagrant ssh
 
