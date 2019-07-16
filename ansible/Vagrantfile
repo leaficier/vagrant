@@ -1,0 +1,19 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.define "one" do |one|
+      one.vm.box = "ubuntu/trusty64"
+      one.vm.network "public_network"
+      one.vm.provider "virtualbox" do |v|
+        v.memory = 512
+      end
+    end
+
+    config.vm.define "two" do |two|
+      two.vm.box = "ubuntu/trusty64"
+      two.vm.network "public_network"
+      two.vm.provider "virtualbox" do |v|
+        v.memory = 512
+      end
+    end
+
+end
