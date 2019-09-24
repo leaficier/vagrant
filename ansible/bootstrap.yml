@@ -1,0 +1,12 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Install stuff
+      apt:
+        name: "{{packages}}"
+        state: present
+      vars:
+        packages:
+        - apache2
+        - htop
+        - thefuck
